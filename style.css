@@ -1,0 +1,718 @@
+/* Import a spy-themed font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --primary-color: #FF4500; /* Deep Orange / Red-Orange for accents */
+    --secondary-color: #FF6347; /* Tomato Red - a slightly lighter shade */
+    --background-color: #1a1a1a; /* Dark background remains */
+    --text-color: #e0e0e0; /* Light grey for readability */
+    --border-color: #444; /* Slightly darker border for better contrast */
+    --card-background: #282828;
+    --error-red: #FF0000; /* Pure red for critical alerts/classified stamps */
+    --shadow-color: rgba(255, 69, 0, 0.5); /* Orange shadow for glow effects */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Roboto Mono', monospace; /* Digital/techy font */
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: var(--primary-color);
+    font-size: 1.5em;
+    font-family: 'Share Tech Mono', monospace;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    border: 5px solid var(--border-color);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Header & Navbar */
+.header {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow-color); /* Subtle orange glow */
+    border-bottom: 1px solid var(--primary-color); /* Underline */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px); /* Slight lift */
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+/* Main Content Padding for fixed header */
+.main-content {
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+/* Sections */
+.section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-bottom: 1px dashed var(--border-color);
+    position: relative; /* For glitch effect */
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2.5em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px var(--shadow-color); /* Orange glow */
+    position: relative;
+    overflow: hidden; /* For title animations */
+}
+
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('images/tech-background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Styling for the Glitch effect on OPERATION: PORTFOLIO */
+.hero-content h1.glitch {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 4em;
+    color: var(--primary-color);
+    margin-bottom: 0px; /* Adjust spacing with h2 below it */
+    text-shadow: 0 0 15px var(--shadow-color);
+    position: relative; /* Keep this for the glitch effect */
+    display: inline-block; /* Helps with clipping */
+}
+
+/* Glitch Effect for H1 */
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--error-red);
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: 2px 0 var(--primary-color);
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+    0% {
+        clip: rect(calc(var(--rand1) * 1px), 9999px, calc(var(--rand2) * 1px), 0);
+        transform: skewX(calc(var(--rand3) * 1deg));
+    }
+    50% {
+        clip: rect(calc(var(--rand4) * 1px), 9999px, calc(var(--rand5) * 1px), 0);
+        transform: skewX(0deg);
+    }
+    100% {
+        clip: rect(calc(var(--rand6) * 1px), 9999px, calc(var(--rand7) * 1px), 0);
+        transform: skewX(calc(var(--rand8) * 1deg));
+    }
+}
+
+/* New styles for your name (h2) in the Hero Section */
+.hero-content h2 {
+    font-family: 'Roboto Mono', monospace; /* Using Roboto Mono for a clean, digital look */
+    font-size: 2.5em; /* Adjust as needed */
+    color: var(--text-color); /* Matches the general text color */
+    margin-top: 5px; /* Adjust spacing between h1 and h2 */
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px var(--shadow-color); /* Subtle orange glow */
+}
+
+
+.hero-content p.typewriter {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5em;
+    border-right: 2px solid var(--primary-color); /* Cursor */
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* Typewriter Effect Keyframes */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-color); }
+}
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 69, 0, 0.3), transparent); /* Orange gradient */
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.btn-secondary {
+    background-color: var(--card-background);
+    color: var(--primary-color);
+    margin-left: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* About Section */
+.profile-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-background);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Less intense glow here */
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 40px;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.profile-details h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    margin-bottom: 10px;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.skill-item {
+    background-color: var(--card-background);
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For tooltip */
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-color);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.skill-item:hover::before {
+    transform: translateX(0);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px var(--shadow-color)); /* Orange glow for icons */
+}
+
+.skill-item p {
+    font-size: 0.95em;
+    color: var(--text-color);
+}
+
+/* Tooltip for skills */
+.skill-item[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+.skill-item:hover[data-tooltip]::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project-card .project-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+    filter: brightness(0.8); /* Slightly dim */
+    transition: filter 0.3s ease, opacity 0.3s ease; /* Add opacity transition */
+}
+
+.project-card .project-video-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Same height as thumbnail */
+    object-fit: cover;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    background-color: black; /* Background for when video is loading */
+    pointer-events: none; /* Prevent video from capturing mouse events when hidden */
+}
+
+.project-card:hover .project-thumbnail {
+    opacity: 0; /* Fade out thumbnail on hover */
+    filter: brightness(1); /* Reset brightness */
+}
+
+.project-card:hover .project-video-preview {
+    opacity: 1; /* Fade in video on hover */
+    pointer-events: auto; /* Allow interaction with video on hover (though muted) */
+}
+
+/* Ensure the title and description are above the video preview */
+.project-card h3,
+.project-card p,
+.project-card .project-links {
+    position: relative;
+    z-index: 2; /* Place them above the video */
+    background-color: var(--card-background); /* Ensure they have a background */
+}
+
+.project-card:hover img {
+    filter: brightness(1); /* Full brightness on hover (for the image if video isn't there) */
+}
+
+.project-card::before {
+    content: 'CLASSIFIED';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--error-red); /* Stays red for warning */
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.7em;
+    font-weight: bold;
+    border-radius: 3px;
+    transform: rotate(5deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+    filter: brightness(0.8); /* Slightly dim */
+    transition: filter 0.3s ease;
+}
+
+.project-card:hover img {
+    filter: brightness(1); /* Full brightness on hover */
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    padding: 15px 20px 10px;
+    margin: 0;
+}
+
+.project-card p {
+    padding: 0 20px 15px;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.project-links {
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-top: 1px dashed var(--border-color);
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-project {
+    flex: 1;
+    text-align: center;
+    margin: 0 5px;
+    font-size: 0.85em;
+    padding: 8px 15px;
+    border: 1px solid var(--primary-color);
+}
+
+/* --- Contact Section (Updated) --- */
+
+/* Removed .contact-form, .form-group, .form-group label, .form-group input, .form-group textarea, .btn-submit */
+/* No more form-specific styling needed */
+
+.contact-section .section-title {
+    margin-bottom: 20px; /* Adjust spacing since no form below */
+}
+
+.contact-section p {
+    text-align: center;
+    margin-bottom: 40px; /* More space before the large icons */
+    font-size: 1.1em;
+}
+
+.social-links-large {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 40px; /* Increased space between icons */
+    margin-top: 30px; /* Space from the text above */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.social-links-large a {
+    display: inline-block; /* Ensure link behaves well for scaling */
+    line-height: 0; /* Remove extra space below images */
+}
+
+.social-links-large img {
+    width: 80px; /* Enlarge icon size significantly */
+    height: 80px; /* Maintain aspect ratio */
+    filter: grayscale(100%) brightness(0.8) drop-shadow(0 0 5px rgba(0, 0, 0, 0.3)); /* Desaturate and add a subtle dark shadow */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-links-large a:hover img {
+    transform: translateY(-8px) scale(1.1); /* Lift and grow on hover */
+    filter: grayscale(0%) brightness(1.2) drop-shadow(0 0 15px var(--shadow-color)); /* Color and stronger orange glow */
+}
+
+/* Original .social-links (if used elsewhere, keep its styles, otherwise remove) */
+/* If you only have social-links-large in the contact section, this can be removed */
+/* For now, keeping it in case it's used somewhere else, but typically you'd remove it if unused. */
+.social-links {
+    text-align: center; /* This might clash if .social-links-large is also centered */
+    margin-top: 30px; /* If this was for footer or similar, keep. If it was for the contact section, it's replaced. */
+    /* If only .social-links-large is used, you can consider removing this block. */
+    display: none; /* Hiding the old .social-links if it's no longer used for contact section */
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%) brightness(0.8) drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+}
+
+.social-links a:hover img {
+    filter: grayscale(0%) brightness(1) drop-shadow(0 0 15px var(--shadow-color));
+    transform: translateY(-5px);
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px dashed var(--border-color);
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-link {
+        margin: 5px 0;
+    }
+    /* Adjusted h1 font size for smaller screens */
+    .hero-content h1.glitch {
+        font-size: 3em;
+    }
+    /* Added h2 for smaller screens */
+    .hero-content h2 {
+        font-size: 2em;
+    }
+    .hero-content p.typewriter {
+        font-size: 1.2em;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-links {
+        flex-direction: column;
+    }
+    .btn-project {
+        margin: 5px 0;
+        width: 90%;
+    }
+    /* Responsive adjustments for large social links */
+    .social-links-large {
+        gap: 25px; /* Reduce gap on smaller screens */
+    }
+    .social-links-large img {
+        width: 60px; /* Slightly smaller icons on mobile */
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjusted h1 font size for smallest screens */
+    .hero-content h1.glitch {
+        font-size: 2em;
+    }
+    /* Added h2 for smallest screens */
+    .hero-content h2 {
+        font-size: 1.5em;
+    }
+    .hero-content p.typewriter {
+        font-size: 1em;
+    }
+    .section {
+        padding: 60px 15px;
+    }
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    /* Further responsive adjustments for large social links */
+    .social-links-large {
+        gap: 20px;
+    }
+    .social-links-large img {
+        width: 50px; /* Even smaller icons on very small screens */
+        height: 50px;
+    }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASSIFIED // Atharv Sheersh Chaturvedi Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+<body>
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+        <p>ACCESSING CLASSIFIED DATABASE...</p>
+    </div>
+
+    <div id="video-modal" class="video-modal" style="display: none;">
+        <div class="video-modal-content">
+            <span class="close-button">&times;</span>
+            <video id="project-video" controls autoplay muted playsinline></video>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#about" class="nav-link">AGENT PROFILE</a>
+            <a href="#skills" class="nav-link">TOP SECRET SKILLS</a>
+            <a href="#portfolio" class="nav-link">MISSION LOGS</a>
+            <a href="#contact" class="nav-link">DIRECT TRANSMISSION</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="OPERATION: PORTFOLIO">OPERATION: PORTFOLIO</h1>
+                <h2>Atharv Sheersh Chaturvedi</h2>
+                <p class="typewriter">App and Game Development enthusiast.</p>
+                <p class="typewriter">Specializing in Embedded Systems.</p>
+                <a href="#portfolio" class="btn btn-primary">VIEW MISSION LOGS</a>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <h2 class="section-title">AGENT PROFILE // IDENTIFICATION</h2>
+            <div class="profile-card">
+                <img src="images/atharv.jpg" alt="Agent Atharv Sheersh Chaturvedi" class="profile-pic">
+                <div class="profile-details">
+                    <h3>Codename: Atharv Sheersh Chaturvedi</h3>
+                    <p>Alias: Abhay Pathak</p>
+                    <p>Primary Skillset: Embedded Systems, App Development(learning stage) and Game Development(Ursina).</p>
+                    <p>Briefing: Hi, I'm Atharv Sheersh Chaturvedi, a 3rd-year Computer Science Engineering student at Kalinga Institute of Industrial Technology (KIIT). I have a deep fascination for App Development and Game Development, constantly exploring ways to blend creativity with code. Outside of tech, I'm also an author, writing under the pen name Abhay Pathak, where I channel stories that reflect imagination, emotion, and complexity.</p>
+                    <a href="documents/Atharv Sheersh Chaturvedi.pdf" download class="btn btn-secondary">DOWNLOAD CLASSIFIED RESUME</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills-section">
+            <h2 class="section-title">TOP SECRET SKILLS // OPERATIONAL EXPERTISE</h2>
+            <div class="skills-grid">
+                <div class="skill-item" data-tooltip="Highly Proficient">
+                    <img src="images/cpp-logo.png" alt="C++" class="skill-icon">
+                    <p>C++ - DSA(Data Structures & Algorithm) on Leetcode and Embedded Projects</p>
+                </div>
+                <div class="skill-item" data-tooltip="Highly Proficient">
+                    <img src="images/python-logo.png" alt="Python" class="skill-icon">
+                    <p>Python - Pygame, Ursina, Turtle and Tkinter</p>
+                </div>
+                </div>
+        </section>
+
+        <section id="portfolio" class="section portfolio-section">
+            <h2 class="section-title">MISSION LOGS // COMPLETED OPERATIONS</h2>
+            <div class="portfolio-grid">
+                <div class="project-card" data-video-src="videos/virat_video.mp4" data-thumbnail-src="images/project1-thumbnail.png">
+                    <img src="images/project1-thumbnail.png" alt="VIRAT 1.0 Thumbnail" class="project-thumbnail">
+                    <video class="project-video-preview" muted loop playsinline preload="none"></video>
+                    <h3>Project Name 1: VIRAT 1.0</h3>
+                    <p>Brief: VIRAT, or Visual Intelligent Routine Assistant for Tasks, is a study table automation system developed for optimized operational efficiency.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/AtharvSChaturvedi/VIRAT-1.0" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-video-src="videos/tron_game_video.mp4" data-thumbnail-src="images/project2-thumbnail.png">
+                    <img src="images/project2-thumbnail.png" alt="TRON Light Cycle Game Thumbnail" class="project-thumbnail">
+                    <video class="project-video-preview" muted loop playsinline preload="none"></video>
+                    <h3>Project Name 2: TRON Light Cycle Game</h3>
+                    <p>Brief: Developed a nostalgic TRON-inspired light cycle game, meticulously recreating classic arcade dynamics and visual effects.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/AtharvSChaturvedi/Tron_LightCycle_Game" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-video-src="videos/drs_system_video.mp4" data-thumbnail-src="images/project3-thumbnail.png">
+                    <img src="images/project3-thumbnail.png" alt="DRS System Thumbnail" class="project-thumbnail">
+                    <video class="project-video-preview" muted loop playsinline preload="none"></video>
+                    <h3>Project Name 3: DRS System</h3>
+                    <p>Brief: Engineered a robust Decision Review System (DRS) simulator, demonstrating complex logic and real-time data processing for critical judgments(run-outs for now).</p>
+                    <div class="project-links">
+                        <a href="https://github.com/AtharvSChaturvedi/DRS-Python" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-video-src="videos/minecraft_clone_video.mp4" data-thumbnail-src="images/project4-thumbnail.png">
+                    <img src="images/project4-thumbnail.png" alt="Minecraft Clone Thumbnail" class="project-thumbnail">
+                    <video class="project-video-preview" muted loop playsinline preload="none"></video>
+                    <h3>Project Name 4: Minecraft Clone</h3>
+                    <p>Brief: Replicated core mechanics of Minecraft in a personal sandbox project, focusing on procedural generation and block interaction.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/AtharvSChaturvedi/Minecraft_Clone_UrsinaPython" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-video-src="videos/mission_assignment_video.mp4" data-thumbnail-src="images/project5-thumbnail.png">
+                    <img src="images/project5-thumbnail.png" alt="Mission Assignment Thumbnail" class="project-thumbnail">
+                    <video class="project-video-preview" muted loop playsinline preload="none"></video>
+                    <h3>Project Name 5: Mission Assignment</h3>
+                    <p>Brief: A playful, interactive experience designed to assign "missions" (tasks or challenges), showcasing dynamic content generation.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/AtharvSChaturvedi/MissionImpossible_MissionAssignment" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-video-src="videos/flappy_bird_video.mp4" data-thumbnail-src="images/project6-thumbnail.png">
+                    <img src="images/project6-thumbnail.png" alt="Flappy Bird Clone Thumbnail" class="project-thumbnail">
+                    <video class="project-video-preview" muted loop playsinline preload="none"></video>
+                    <h3>Project Name 6: Flappy Bird Clone</h3>
+                    <p>Brief: Developed a functional clone of the popular Flappy Bird game, emphasizing game physics and responsive controls.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/AtharvSChaturvedi/FlappyBird" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">DIRECT TRANSMISSION // CONNECT WITH ME</h2>
+            <p>Ready to collaborate on a new mission? Find me on these secure channels:</p>
+            <div class="social-links-large"> <a href="https://www.instagram.com/atharv.chat?igsh=a25ndnpwaXBuNXdr" target="_blank" title="Instagram Account"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/atharv-sheersh-chaturvedi-087a5a28a/" target="_blank" title="LinkedIn Profile"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="https://github.com/AtharvSChaturvedi" target="_blank" title="GitHub Repository"><img src="images/github-icon.png" alt="GitHub"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 CLASSIFIED // All Rights Reserved // Agent Atharv Sheersh Chaturvedi</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
