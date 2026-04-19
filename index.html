@@ -14,18 +14,14 @@
         <p>ACCESSING CLASSIFIED DATABASE...</p>
     </div>
 
-    <div id="video-modal" class="video-modal" style="display: none;">
-        <div class="video-modal-content">
-            <span class="close-button">&times;</span>
-            <video id="project-video" controls autoplay muted playsinline></video>
-        </div>
-    </div>
-
     <header class="header">
         <nav class="navbar">
             <a href="#about" class="nav-link">AGENT PROFILE</a>
             <a href="#skills" class="nav-link">TOP SECRET SKILLS</a>
+            <a href="#experience" class="nav-link">WORK EXPERIENCE</a>
             <a href="#portfolio" class="nav-link">MISSION LOGS</a>
+            <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
+            <a href="#education" class="nav-link">EDUCATION</a>
             <a href="#contact" class="nav-link">DIRECT TRANSMISSION</a>
         </nav>
     </header>
@@ -41,6 +37,7 @@
             </div>
         </section>
 
+        <!-- ABOUT -->
         <section id="about" class="section about-section">
             <h2 class="section-title">AGENT PROFILE // IDENTIFICATION</h2>
             <div class="profile-card">
@@ -48,44 +45,93 @@
                 <div class="profile-details">
                     <h3>Codename: Atharv Sheersh Chaturvedi</h3>
                     <p>Alias: Abhay Pathak</p>
-                    <p>Primary Skillset: Embedded Systems, SOLIDWORKS(intermediate) and Game Development(Ursina).</p>
+                    <p>Primary Skillset: Embedded Systems, SOLIDWORKS (intermediate) and Game Development (Ursina).</p>
                     <p>Briefing: Hi, I'm Atharv Sheersh Chaturvedi, a 3rd-year Computer Science Engineering student at Kalinga Institute of Industrial Technology (KIIT). I have a deep fascination for Game Development, constantly exploring ways to blend creativity with code. Outside of tech, I'm also an author, writing under the pen name Abhay Pathak, where I channel stories that reflect imagination, emotion, and complexity.</p>
                     <a href="documents/Atharv Sheersh Chaturvedi.pdf" download class="btn btn-secondary">DOWNLOAD CLASSIFIED RESUME</a>
                 </div>
             </div>
         </section>
 
+        <!-- SKILLS -->
         <section id="skills" class="section skills-section">
             <h2 class="section-title">TOP SECRET SKILLS // OPERATIONAL EXPERTISE</h2>
             <div class="skills-grid">
                 <div class="skill-item" data-tooltip="Highly Proficient">
-                    <img src="images/cpp-logo.png" alt="C++" class="skill-icon">
-                    <p>C++ - DSA(Data Structures & Algorithm) on Leetcode and Embedded Projects</p>
+                    <img src="images/python-logo.png" alt="Python" class="skill-icon">
+                    <p>Python - Flask, Matplotlib, Seaborn, Selenium, Pygame, Ursina, Turtle and Tkinter</p>
                 </div>
                 <div class="skill-item" data-tooltip="Highly Proficient">
-                    <img src="images/python-logo.png" alt="Python" class="skill-icon">
-                    <p>Python - Pygame, Ursina, Turtle and Tkinter</p>
+                    <img src="images/cpp-logo.png" alt="C++" class="skill-icon">
+                    <p>C++ - DSA (Data Structures & Algorithm) on Leetcode and Embedded Projects</p>
                 </div>
+                <div class="skill-item" data-tooltip="Highly Proficient">
+                    <img src="images/html-logo.png" alt="HTML" class="skill-icon">
+                    <p>HTML - Basic Frontend and Ajax</p>
                 </div>
+                <div class="skill-item" data-tooltip="Highly Proficient">
+                    <img src="images/solidworks-logo.png" alt="Solidworks" class="skill-icon">
+                    <p>Solidworks - Basic Modelling</p>
+                </div>
+            </div>
         </section>
 
-        <section id="portfolio" class="section portfolio-section">
-            <h2 class="section-title">MISSION LOGS // COMPLETED OPERATIONS</h2>
-            <div class="portfolio-grid">
-                <div class="project-card" data-video-src="videos/virat_video2.mp4" data-thumbnail-src="images/project1-thumbnail-new.png">
-                    <img src="images/project1_thumbnail_new.png" alt="VIRAT 1.5.0 Thumbnail" class="project-thumbnail">
-                    <video class="project-video-preview" muted loop playsinline preload="none"></video>
-                    <h3>Project Name 1: VIRAT 1.5.0</h3>
-                    <p>Brief: VIRAT, or Visual Intelligent Routine Assistant for Tasks, is a study table automation system developed for optimized operational efficiency.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/AtharvSChaturvedi/VIRAT-1.5.0" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
+        <!-- WORK EXPERIENCE -->
+        <section id="experience" class="section experience-section">
+            <h2 class="section-title">FIELD OPERATIONS // WORK EXPERIENCE</h2>
+            <div class="timeline">
+
+                <!-- Example entry – replace with real data -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role">Embedded Enginer / Team Member</h3>
+                            <span class="timeline-badge">ACTIVE</span>
+                        </div>
+                        <p class="timeline-org">KIIT Robotics Society</p>
+                        <p class="timeline-date">November 2024 – Present</p>
+                        <ul class="timeline-bullets">
+                            <li>Key responsibility or achievement goes here.</li>
+                            <li>Another notable contribution or technology used.</li>
+                            <li>Outcome, metric, or impact if available.</li>
+                        </ul>
                     </div>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role">IOT Engineer / Team Member</h3>
+                            <span class="timeline-badge timeline-badge--past">COMPLETED</span>
+                        </div>
+                        <p class="timeline-org">IOT Lab</p>
+                        <p class="timeline-date">October 2025 – December 2025</p>
+                        <ul class="timeline-bullets">
+                            <li>Key responsibility or achievement goes here.</li>
+                            <li>Another notable contribution or technology used.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section id="portfolio" class="section portfolio-section">
+            <h2 class="section-title">MISSION LOGS // COMPLETED OPERATIONS</h2>
+
+            <!-- SOFTWARE SUBSECTION -->
+            <div class="subsection-label">
+                <span class="subsection-tag">SOFTWARE</span>
+                <span class="subsection-line"></span>
+            </div>
+            <div class="portfolio-grid">
 
                 <div class="project-card" data-video-src="videos/F1_Game_Demo.mp4" data-thumbnail-src="images/project2-thumbnail.png">
                     <img src="images/project2-thumbnail.png" alt="F1 Game" class="project-thumbnail">
                     <video class="project-video-preview" muted loop playsinline preload="none"></video>
-                    <h3>Project Name 2: F1 Game</h3>
+                    <h3>F1 Game</h3>
                     <p>Brief: An immersive and fast-paced Formula 1 themed racing experience, designed for fun and engagement.</p>
                     <div class="project-links">
                         <a href="https://github.com/AtharvSChaturvedi/F1_Game" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
@@ -95,7 +141,7 @@
                 <div class="project-card" data-video-src="videos/tron_game_video.mp4" data-thumbnail-src="images/project3-thumbnail.png">
                     <img src="images/project3-thumbnail.png" alt="TRON Light Cycle Game Thumbnail" class="project-thumbnail">
                     <video class="project-video-preview" muted loop playsinline preload="none"></video>
-                    <h3>Project Name 3: TRON Light Cycle Game</h3>
+                    <h3>TRON Light Cycle Game</h3>
                     <p>Brief: Developed a nostalgic TRON-inspired light cycle game, meticulously recreating classic arcade dynamics and visual effects.</p>
                     <div class="project-links">
                         <a href="https://github.com/AtharvSChaturvedi/Tron_LightCycle_Game" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
@@ -105,7 +151,7 @@
                 <div class="project-card" data-video-src="videos/minecraft_clone_video.mp4" data-thumbnail-src="images/project4-thumbnail.png">
                     <img src="images/project4-thumbnail.png" alt="Minecraft Clone Thumbnail" class="project-thumbnail">
                     <video class="project-video-preview" muted loop playsinline preload="none"></video>
-                    <h3>Project Name 4: Minecraft Clone</h3>
+                    <h3>Minecraft Clone</h3>
                     <p>Brief: Replicated core mechanics of Minecraft in a personal sandbox project, focusing on procedural generation and block interaction.</p>
                     <div class="project-links">
                         <a href="https://github.com/AtharvSChaturvedi/Minecraft_Clone_UrsinaPython" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
@@ -115,8 +161,8 @@
                 <div class="project-card" data-video-src="videos/drs_system_video.mp4" data-thumbnail-src="images/project5-thumbnail.png">
                     <img src="images/project5-thumbnail.png" alt="DRS System Thumbnail" class="project-thumbnail">
                     <video class="project-video-preview" muted loop playsinline preload="none"></video>
-                    <h3>Project Name 5: DRS System</h3>
-                    <p>Brief: Engineered a robust Decision Review System (DRS) simulator, demonstrating complex logic and real-time data processing for critical judgments(run-outs for now).</p>
+                    <h3>DRS System</h3>
+                    <p>Brief: Engineered a robust Decision Review System (DRS) simulator, demonstrating complex logic and real-time data processing for critical judgments (run-outs for now).</p>
                     <div class="project-links">
                         <a href="https://github.com/AtharvSChaturvedi/DRS-Python" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
                     </div>
@@ -125,7 +171,7 @@
                 <div class="project-card" data-video-src="videos/flappy_bird_video.mp4" data-thumbnail-src="images/project6-thumbnail.png">
                     <img src="images/project6-thumbnail.png" alt="Flappy Bird Clone Thumbnail" class="project-thumbnail">
                     <video class="project-video-preview" muted loop playsinline preload="none"></video>
-                    <h3>Project Name 6: Flappy Bird Clone</h3>
+                    <h3>Flappy Bird Clone</h3>
                     <p>Brief: Developed a functional clone of the popular Flappy Bird game, emphasizing game physics and responsive controls.</p>
                     <div class="project-links">
                         <a href="https://github.com/AtharvSChaturvedi/FlappyBird" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
@@ -133,12 +179,169 @@
                 </div>
 
             </div>
+
+            <!-- HARDWARE SUBSECTION -->
+            <div class="subsection-label" style="margin-top: 60px;">
+                <span class="subsection-tag subsection-tag--hardware">HARDWARE</span>
+                <span class="subsection-line subsection-line--hardware"></span>
+            </div>
+            <div class="portfolio-grid">
+
+                <div class="project-card" data-video-src="videos/virat_video2.mp4" data-thumbnail-src="images/project1-thumbnail-new.png">
+                    <img src="images/project1_thumbnail_new.png" alt="VIRAT 1.5.0 Thumbnail" class="project-thumbnail">
+                    <video class="project-video-preview" muted loop playsinline preload="none"></video>
+                    <h3>VIRAT 1.5.0</h3>
+                    <p>Brief: VIRAT, or Visual Intelligent Routine Assistant for Tasks, is a study table automation system developed for optimized operational efficiency.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/AtharvSChaturvedi/VIRAT-1.5.0" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
+                    </div>
+                </div>
+
+                <!-- Placeholder hardware card – replace with real project -->
+                <div class="project-card" data-video-src="" data-thumbnail-src="images/hw-placeholder.png">
+                    <img src="images/hw-placeholder.png" alt="Hardware Project Thumbnail" class="project-thumbnail">
+                    <video class="project-video-preview" muted loop playsinline preload="none"></video>
+                    <h3>Hardware Project Name</h3>
+                    <p>Brief: Short description of the hardware project, components used, and the problem it solves.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/AtharvSChaturvedi" target="_blank" class="btn btn-project">VIEW INTEL (CODE)</a>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
+        <!-- CERTIFICATIONS -->
+        <section id="certifications" class="section certifications-section">
+            <h2 class="section-title">CLEARANCE RECORDS // CERTIFICATIONS</h2>
+            <div class="cert-grid">
+
+                <a href="https://drive.google.com/file/d/1fQJ-sXXtY8xhbdvzH3_3znN36lY_-9At/view?usp=drive_link" target="_blank" class="cert-card">
+                    <div class="cert-info">
+                        <h3 class="cert-title">100 Days of Code: The Complete Python Pro Bootcamp</h3>
+                        <p class="cert-issuer">Udemy</p>
+                        <p class="cert-date">January 2026</p>
+                    </div>
+                    <span class="cert-open">OPEN FILE ↗</span>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1QHC9Wt-eA4bgRbx71FGPZuTrDZ7quTWS/view?usp=drive_link" target="_blank" class="cert-card">
+                    <div class="cert-info">
+                        <h3 class="cert-title">TCS iON Career Edge - Young Professional</h3>
+                        <p class="cert-issuer">Tata Consultancy Service</p>
+                        <p class="cert-date">October 2025</p>
+                    </div>
+                    <span class="cert-open">OPEN FILE ↗</span>
+                </a>
+
+                <a href="https://drive.google.com/file/d/14EnwAnk0PfxDKOh1DNZIZ9N3xh5osB6n/view?usp=drive_link" target="_blank" class="cert-card">
+                    <div class="cert-info">
+                        <h3 class="cert-title">TCS iON Career Edge - IT Primer</h3>
+                        <p class="cert-issuer">Tata Consultancy Service</p>
+                        <p class="cert-date">January 2026</p>
+                    </div>
+                    <span class="cert-open">OPEN FILE ↗</span>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1CTsXCuHzxxQbCwY8fFG33oJHjeUWAUh7/view?usp=drive_link" target="_blank" class="cert-card">
+                    <div class="cert-info">
+                        <h3 class="cert-title">TCS iON Career Edge - Interview and Job Readiness</h3>
+                        <p class="cert-issuer">Tata Consultancy Service</p>
+                        <p class="cert-date">January 2026</p>
+                    </div>
+                    <span class="cert-open">OPEN FILE ↗</span>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1YpYztHy9GJqvUROwe3j__pIhmED8W9_K/view?usp=drive_link" target="_blank" class="cert-card">
+                    <div class="cert-info">
+                        <h3 class="cert-title">Learn SolidWorks from Basic to Advance</h3>
+                        <p class="cert-issuer">Eduonix Learning Solutions Pvt Ltd</p>
+                        <p class="cert-date">December 2025</p>
+                    </div>
+                    <span class="cert-open">OPEN FILE ↗</span>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1Z9T0Ug3uAKJ1EK4Bch-CiwRn0T6DUmc8/view?usp=drive_link" target="_blank" class="cert-card">
+                    <div class="cert-info">
+                        <h3 class="cert-title">Smart India Hackathon - Certificate of Participation</h3>
+                        <p class="cert-issuer">KIIT - Kalinga Institute of Industrial Technology</p>
+                        <p class="cert-date">November 2025</p>
+                    </div>
+                    <span class="cert-open">OPEN FILE ↗</span>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1ybm9XF6-VrqYd73AL58VGITOBXxBRFkg/view?usp=drive_link" target="_blank" class="cert-card">
+                    <div class="cert-info">
+                        <h3 class="cert-title">Certificate of Presentation – 3rd National Conclave on Viksit Bharat @2047</h3>
+                        <p class="cert-issuer">KIIT - Kalinga Institute of Industrial Technology</p>
+                        <p class="cert-date">March 2026</p>
+                    </div>
+                    <span class="cert-open">OPEN FILE ↗</span>
+                </a>
+
+                <a href="https://drive.google.com/file/d/12Pt-fQMd385xt8MvRbQKVBqg0jJ32wgj/view?usp=drive_link" target="_blank" class="cert-card">
+                    <div class="cert-info">
+                        <h3 class="cert-title">KREATIVITY-2.0 Annual Project Expo 2025 – Prototype (Certificate of Appreciation)</h3>
+                        <p class="cert-issuer">School of Electronics Engineering, KIIT DU</p>
+                        <p class="cert-date">January 2025</p>
+                    </div>
+                    <span class="cert-open">OPEN FILE ↗</span>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1vMRQ-Ap6rTqcLThsaSn8oCxGhr6vM_vV/view?usp=drive_link" target="_blank" class="cert-card">
+                    <div class="cert-info">
+                        <h3 class="cert-title">Business Analytics for Decision Making</h3>
+                        <p class="cert-issuer">Coursera (Authorized by University of Colorado Boulder)</p>
+                        <p class="cert-date">March 2026</p>
+                    </div>
+                    <span class="cert-open">OPEN FILE ↗</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="section education-section">
+            <h2 class="section-title">TRAINING HISTORY // EDUCATION</h2>
+            <div class="edu-grid">
+
+                <div class="edu-card">
+                    <div class="edu-year">2023 – Present</div>
+                    <div class="edu-body">
+                        <h3 class="edu-degree">B.Tech – Computer Science Engineering</h3>
+                        <p class="edu-institution">Kalinga Institute of Industrial Technology (KIIT), Bhubaneswar</p>
+                        <p class="edu-detail">CGPA: 7.80 / 10.0</p>
+                        <p class="edu-detail">Relevant Coursework: Data Structures & Algorithms, Embedded Systems, Operating Systems, Computer Networks</p>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-year">2021 – 2023</div>
+                    <div class="edu-body">
+                        <h3 class="edu-degree">Class XII – Science (PCM + CS)</h3>
+                        <p class="edu-institution">C.A.R.E. Public School, Bilaspur</p>
+                        <p class="edu-detail">Percentage / Grade: 86.6%</p>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-year">2011 – 2021</div>
+                    <div class="edu-body">
+                        <h3 class="edu-degree">Class X</h3>
+                        <p class="edu-institution">Delhi Public School, Bilaspur</p>
+                        <p class="edu-detail">Percentage / Grade: 98.2%</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
         <section id="contact" class="section contact-section">
             <h2 class="section-title">DIRECT TRANSMISSION // CONNECT WITH ME</h2>
             <p>Ready to collaborate on a new mission? Find me on these secure channels:</p>
-            <div class="social-links-large"> <a href="https://www.instagram.com/atharv.chat?igsh=a25ndnpwaXBuNXdr" target="_blank" title="Instagram Account"><img src="images/instagram-icon.png" alt="Instagram"></a>
+            <div class="social-links-large">
+                <a href="https://www.instagram.com/atharv.chat?igsh=a25ndnpwaXBuNXdr" target="_blank" title="Instagram Account"><img src="images/instagram-icon.png" alt="Instagram"></a>
                 <a href="https://www.linkedin.com/in/atharv-sheersh-chaturvedi-087a5a28a/" target="_blank" title="LinkedIn Profile"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
                 <a href="https://github.com/AtharvSChaturvedi" target="_blank" title="GitHub Repository"><img src="images/github-icon.png" alt="GitHub"></a>
             </div>
