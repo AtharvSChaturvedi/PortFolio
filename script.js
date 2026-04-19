@@ -28,17 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-
             if (targetElement) {
                 const header = document.querySelector('.header');
                 const headerOffset = header ? header.offsetHeight : 0;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
         });
     });
@@ -49,9 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
     projectCards.forEach(card => {
         const videoElement = card.querySelector('.project-video-preview');
         const videoSrc = card.getAttribute('data-video-src');
-        // const thumbnailElement = card.querySelector('.project-thumbnail'); // Not directly used in JS logic here
 
-        if (videoSrc) {
+        if (videoSrc && videoElement) {
             videoElement.preload = 'metadata';
             videoElement.src = videoSrc;
 
@@ -72,8 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Konami Code (Easter Egg) - No changes needed to this logic itself
-    let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    // 4. Konami Code Easter Egg
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+                        'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     let konamiIndex = 0;
 
     document.addEventListener('keydown', (e) => {
@@ -96,14 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.backgroundPosition = 'center';
     }
 
-    // 5. Section Visibility Observer (Data Stream Effect)
+    // 5. Section Visibility Observer (Fade-in on scroll)
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0.08
     };
 
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
+    const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -114,14 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.section').forEach(section => {
         sectionObserver.observe(section);
     });
-
-    // Clean up: Remove the now unused video modal from previous iteration
-    const videoModal = document.getElementById('video-modal');
-    if (videoModal) {
-        videoModal.remove();
-    }
-
-    // No need for contact form validation functions or listeners as the form is removed.
 });
 
 window.addEventListener('load', () => {
