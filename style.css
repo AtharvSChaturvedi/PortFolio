@@ -78,15 +78,38 @@ body {
     border-bottom: 1px solid var(--primary-color);
 }
 
+/* Single-row navbar that scrolls sideways when the window gets narrow */
 .navbar {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;   /* centering is done by the auto margins below,
+                                      so the first link is never cut off when scrolling */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 4px;
     gap: 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
 }
+
+.navbar::-webkit-scrollbar {
+    height: 4px;
+}
+
+.navbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.navbar .nav-link:first-child { margin-left: auto; }
+.navbar .nav-link:last-child  { margin-right: auto; }
 
 .nav-link {
     color: var(--text-color);
@@ -97,6 +120,7 @@ body {
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .nav-link::before {
@@ -843,8 +867,8 @@ body {
    RESPONSIVE
    ================================================ */
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; align-items: center; }
-    .nav-link { margin: 3px 0; font-size: 0.8em; }
+    /* navbar stays a single row and scrolls sideways (see .navbar above) */
+    .nav-link { font-size: 0.8em; }
     .hero-content h1.glitch { font-size: 3em; }
     .hero-content h2 { font-size: 2em; }
     .hero-content p.typewriter { font-size: 1.2em; }
