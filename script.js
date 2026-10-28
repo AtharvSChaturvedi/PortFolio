@@ -1,3 +1,14 @@
+// 0. Always open at the top of the page
+// - stop the browser from restoring an old scroll position on reload
+// - drop any #hash (e.g. #portfolio) left in the URL so it doesn't jump there
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Loading Screen Animation
     const loadingScreen = document.getElementById('loading-screen');
@@ -22,8 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'auto';
     }
 
-    // 2. Smooth Scrolling for Navigation
-    document.querySelectorAll('.nav-link').forEach(anchor => {
+    // 2. Smooth Scrolling for Navigation (nav links + the hero button)
+    // preventDefault keeps #hash out of the URL, so reloads start at the top
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
@@ -115,5 +127,9 @@ window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen && loadingScreen.classList.contains('hidden')) {
         loadingScreen.remove();
+    }
+    // Make sure late layout shifts (images loading) haven't pushed us off the top
+    if (!window.location.hash) {
+        window.scrollTo(0, 0);
     }
 });
